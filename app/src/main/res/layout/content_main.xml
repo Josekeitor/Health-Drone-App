@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jc.helloworld.MainActivity"
+    tools:layout_editor_absoluteY="74dp"
+    tools:showIn="@layout/activity_main">
+
+    <Button
+        android:id="@+id/bSensores"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="120dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Sensores"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/bMapa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/bDron"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Dron"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/bSensores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bPaciente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="244dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Paciente"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bMapa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="200dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Mapa"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/bPaciente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:layout_width="368dp"
+        android:layout_height="210dp"
+        app:layout_constraintTop_toBottomOf="@+id/bPaciente"
+        tools:layout_editor_absoluteX="8dp">
+
+        <TextView
+            android:id="@+id/bpm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/pPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/pDron"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/pregDronX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:text="TextView"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/dronPY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_row="1"
+            android:ems="10"
+            android:hint="Pos. Dron Y"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/dronPX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_row="0"
+            android:ems="10"
+            android:hint="Pos. dron X"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/pregDronY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="1"
+            android:text="TextView"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/pregPacienteX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="2"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/pregPacienteY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="3"
+            android:text="TextView" />
+
+        <EditText
+            android:id="@+id/pacientePX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_row="2"
+            android:ems="10"
+            android:hint="Pos. Pac. X"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/pacientePY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_row="3"
+            android:ems="10"
+            android:hint="Pos. Pac. Y"
+            android:inputType="number" />
+
+    </GridLayout>
+
+</android.support.constraint.ConstraintLayout>
