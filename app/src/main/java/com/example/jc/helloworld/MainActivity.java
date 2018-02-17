@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         float d=0;
+
         final TextView bpm =  findViewById(R.id.bpm);
         final TextView speed =  findViewById(R.id.speed);
         final TextView pPaciente =  findViewById(R.id.pPaciente);
@@ -28,14 +30,15 @@ public class MainActivity extends AppCompatActivity {
         final TextView pDronX =  findViewById(R.id.pregDronX);
         final TextView pPacienteY = findViewById(R.id.pregPacienteY);
         final TextView pDronY =  findViewById(R.id.pregDronY);
-        EditText dronPosX =  findViewById(R.id.dronPX);
-        EditText pacientePosX = findViewById(R.id.pacientePX);
-        EditText dronPosY =  findViewById(R.id.dronPY);
-        EditText pacientePosY = findViewById(R.id.pacientePY);
+        final EditText dronPosX =  findViewById(R.id.dronPX);
+        final EditText pacientePosX = findViewById(R.id.pacientePX);
+        final EditText dronPosY =  findViewById(R.id.dronPY);
+        final EditText pacientePosY = findViewById(R.id.pacientePY);
         Button bSensores =  findViewById(R.id.bSensores);
         Button bDron =  findViewById(R.id.bDron);
         Button bPaciente =  findViewById(R.id.bPaciente);
         Button bMapa = findViewById(R.id.bMapa);
+
 
         pPacienteX.setText("Cual es la posicion del paciente? (X)");
         pDronX.setText("Cual es la posicion del dron? (X)");
@@ -46,21 +49,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 bpm.setText("98 BPM");
+
             }
         });
 
         bDron.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String Dx = dronPosX.getText().toString();
+                String Dy = dronPosY.getText().toString();
                 speed.setText("12 m/s");
+
+                pDron.setText(Dx + " en X y "+Dy +" en Y");
             }
         });
 
 
         bPaciente.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View view) {
-                pPaciente.setText("12 m/s");
+                String Px = pacientePosX.getText().toString();
+                String Py = pacientePosY.getText().toString();
+
+                pPaciente.setText(Px + " en X y: " + Py +" en Y");
+
             }
         });
 
@@ -68,8 +80,16 @@ public class MainActivity extends AppCompatActivity {
         bMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String xP = pacientePosX.getText().toString();
+                int Px = Integer.parseInt(xP);
+                String yP = pacientePosY.getText().toString();
+                int Py = Integer.parseInt(yP);
+                String xD = dronPosX.getText().toString();
+                int Dx = Integer.parseInt(xD);
+                String yD = dronPosY.getText().toString();
+                int Dy = Integer.parseInt(yD);
 
-                distance.setText("12 m/s");
+                distance.setText("Distancia: " + getDist(Dx,Dy,Px,Py));
             }
         });
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -82,25 +102,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+   public int getDist( int Dx,int Dy,int Px,int Py) {
+       double dist = (Math.sqrt((Px - Dx) ^ 2 + (Py - Dy) ^ 2));
+       return (int) dist;
+   }
 }
