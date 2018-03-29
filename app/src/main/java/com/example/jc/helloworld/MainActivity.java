@@ -1,11 +1,10 @@
 package com.example.jc.helloworld;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +13,7 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    public static final String EXTRA_MESSAGE = "com.example.jc.helloworld";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +44,17 @@ public class MainActivity extends AppCompatActivity {
         pPacienteY.setText("Cual es la posicion del paciente? (Y)");
         pDronY.setText("Cual es la posicion del dron? (Y)");
 
+
+
+
+
+
         bSensores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 bpm.setText("98 BPM");
-
+                Intent intent = new Intent(MainActivity.this, InfoDisplay.class);
+                startActivity(intent);
             }
         });
 
@@ -92,15 +97,17 @@ public class MainActivity extends AppCompatActivity {
                 distance.setText("Distancia: " + getDist(Dx,Dy,Px,Py));
             }
         });
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
+    public void onResume() {
+        super.onResume();
+
+
+
+
+    }
+
+
 
    public int getDist( int Dx,int Dy,int Px,int Py) {
        double dist = (Math.sqrt((Px - Dx) ^ 2 + (Py - Dy) ^ 2));
