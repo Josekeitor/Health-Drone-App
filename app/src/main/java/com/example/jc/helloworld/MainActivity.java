@@ -2,8 +2,6 @@ package com.example.jc.helloworld;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 speed.setText("12 m/s");
 
                 pDron.setText(Dx + " en X y "+Dy +" en Y");
+
+                Intent intent= new Intent(MainActivity.this, DronInfo.class);
+                startActivity(intent);
             }
         });
 
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
                 pPaciente.setText(Px + " en X y: " + Py +" en Y");
 
+                Intent intent = new Intent(MainActivity.this, Paciente.class);
+                startActivity(intent);
             }
         });
 

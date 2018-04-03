@@ -2,4 +2,6 @@
     <string name="app_name">Hello world</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_confirmacion_dron">ConfirmacionDron</string>
+    <string name="title_activity_paciente">Paciente</string>
+    <string name="title_activity_dron_info">DronInfo</string>
 </resources>

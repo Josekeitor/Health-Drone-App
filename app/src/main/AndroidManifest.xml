@@ -29,6 +29,14 @@
         <activity
             android:name=".ConfirmacionDron"
             android:label="@string/title_activity_confirmacion_dron"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Paciente"
+            android:label="@string/title_activity_paciente"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DronInfo"
+            android:label="@string/title_activity_dron_info"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -1,12 +1,12 @@
 package com.example.jc.helloworld;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.content.Intent;
 
 
 public class InfoDisplay extends AppCompatActivity {
@@ -30,6 +30,30 @@ setTitle("Sensores");
 
         textoBPM.setText(bpm + "BPM");
         textoTemp.setText(temp + "°C");
+
+        bBPM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InfoDisplay.this, Paciente.class);
+                startActivity(intent);
+            }
+        });
+
+        bTempPaciente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InfoDisplay.this, Paciente.class);
+                startActivity(intent);
+            }
+        });
+
+        bEstadoPaciente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InfoDisplay.this, Paciente.class);
+                startActivity(intent);
+            }
+        });
 
         bllamarDron.setOnClickListener(new View.OnClickListener() {
             @Override
